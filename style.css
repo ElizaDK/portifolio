@@ -1,3 +1,100 @@
+/*----------------------fontes externas-------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+/*----------------------configuração geral-------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*----------------------configuração header-------------------------*/
+header{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;/*--------tira a possibilidade de aparecer barra de rolagem-----------*/
+    position: relative;/* para o banner funcionar como absolute o header tem que ser relativo*/
+}
+.img-wraper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.8);/*rgb a, onde a é a transparencia*/
+}
+.img-wraper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* faz com que a imagem cubra a div, a imagem nao perde propporção*/
+    opacity: 0.5;/* muda a opacidade da imagem - p/ nao ficar om aparencia de lavada, colocamos background no (img-wraper)*/
+    animation: zoom 10s; /*fereferente ao key frame criado abaixo*/
+}
+/*----------------------configuração de entrada NO SITE (key frame)-------------------------*/
+@keyframes zoom {
+    0%{
+        transform: scale(1.3);/*zoom de 30% na imagem*/
+    }
+    100%{
+        transform: scale(1);/*volta ao tamamho normal*/
+    }
+}
+
+.banner{
+    position: absolute;/* + para funcionar esse posicionamento precisa estar dentro de algo relativo, que é o header*/
+    top: 30%; /*distancia em relação ao top 1/3 da tela*/
+    left:15%;/*distancia em relação a lateral esquerda da tela*/
+}
+.banner h1{
+    color: #ffffff;
+    font-size: 5rem; /* tamanho referente ao elemento rpincipal do site que na maioria é 16px (3.5 * 16px)*/
+    font-family: "Baloo Da 2", serif;/*fonte carregada do site da google*/
+    font-weight: 200;
+    text-shadow: .3rem .4rem 2px rgba(0,0, 0, 0.4);/*istanciamento da sombra da direita /baixo /bluer"embaçada" e a cor */
+    line-height: 5.5rem;/*distanciamento entre texto*/
+    margin-bottom: 10rem;/*espacamento entre o h1 e p*/
+    opacity: 0;/*aparece em transparencia*/
+    animation: moveBanner 1s 0.5s forwards; /*referente a animacao criada*/
+}
+.banner p{
+    font-family: "Josefin Slab",serif;
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: .3rem .4rem 2px rgba(240, 25, 211, 0.021);/*istanciamento da sombra da direita /baixo /bluer"embaçada" e a cor */
+    margin-bottom: 1rem;/*espacamento entre o p e o button*/
+    opacity: 0;/*aparece em transparencia*/
+    animation: moveBanner 1s 0.7s forwards; /*referente a animacao criada*/
+    
+}
+span{
+    color: rgb(235, 109, 178);
+    font-weight: 800;
+}
+.banner button{
+    font-family: "Muli", serif;
+    color: #fff;
+    font-size: .8rem;
+    border-radius: 5px;/*em pixel para nao mudar o arredondamento*/
+    letter-spacing: .2rem;/*espaçamento entre as letras*/
+    text-transform: uppercase;/*deixa as letras maiusculas*/
+    background: #B24592;  /*gradiente pego no site https://uigradients.com/*/
+    background: -webkit-linear-gradient(to right, #F15F79, #B24592);  
+    background: linear-gradient(to right, #F15F79, #B24592); 
+    padding: 1rem 3rem;/* esse 1rem = 16px e 3rem = 48px*/
+    cursor: pointer;
+    opacity: 0;/*aparece em transparencia*/
+    animation: moveBanner 1s 0.9s forwards; /*referente a animacao criada*/
+    
+}
+.banner button:hover{ /*ação no botão*/
+   /* opacity: 0.8;muda ao passar o mouse em cima*/
+   color: #000;
+}
+/*----------------------configuração de entrada do texto do header-------------------------*/
+@keyframes moveBanner{
+    0%{
+        transform: translateY(10rem), rotateY('-30deg');/*o texto vai descer no eixo y em 160px / e virar 30 graus no mesmo eixo*/
+    }
+    100%{ 
+        transform: translateY(0), rotateY('0');/*o texto vai voltar a posicao original*/
+        opacity: 1;/*aparece */
+    }
+}
