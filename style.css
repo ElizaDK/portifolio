@@ -17,6 +17,9 @@
     --font-secundary: "Josefin Slab",serif;
     --font-action:"Muli", serif;
 }
+html{
+    scroll-behavior: smooth; /*navegacao do scrool mais suave*/
+}
 .btn{
     background: #B24592;  /*gradiente pego no site https://uigradients.com/*/
     background: -webkit-linear-gradient(to right, #F15F79, #B24592);  
@@ -196,6 +199,7 @@ span{
     right: -20rem;/*localizacao na tela ao iniciar  */
     position: fixed;
     transition: all 1s;/*suavidade na entrada e saida*/
+                                            /*z-index: 110;em termo de profundidade o menu ficara em cima*/
 }
 /*-----inicio classe criada no javascript-----*/
 .show-menu .sidebar{
@@ -544,4 +548,49 @@ span{
     padding: 1rem;
     cursor: pointer;
     grid-column: 2;
+}
+/*-----------inicio configuração section RODAPÉ-------------*/
+ footer{
+    width: 100%;
+    height: 7rem;
+    background-color: #171816;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-content{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-content p{
+    font-family: var(--font-secundary);
+    color: #a7a7a7;
+    font-size: 1.2rem;
+}
+.social-list a{
+    margin: 0 2rem;
+    color: #a7a7a7;
+    font-size: 1.3rem;
+}
+.social-list ul{
+    display: flex;
+    justify-items: space-between;
+    color:#a7a7a7;
+}
+#link-topo{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    width: 3rem;
+    height: 3rem;
+    background: #B24592;  /*gradiente pego no site https://uigradients.com/*/
+    background: -webkit-linear-gradient(to right, #F15F79, #B24592);  
+    background: linear-gradient(to right, #F15F79, #B24592);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    border-radius: .3rem;
+    box-shadow: 0 0.1rem .6rem #000000;
 }
