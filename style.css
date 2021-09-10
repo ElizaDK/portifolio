@@ -17,6 +17,16 @@
     --font-secundary: "Josefin Slab",serif;
     --font-action:"Muli", serif;
 }
+.btn{
+    background: #B24592;  /*gradiente pego no site https://uigradients.com/*/
+    background: -webkit-linear-gradient(to right, #F15F79, #B24592);  
+    background: linear-gradient(to right, #F15F79, #B24592); 
+    font-family: var(--font-action);
+    border-radius: .5rem;
+    color: #fff;
+    box-shadow: 0 .1rem .8rem rgba(0,0,0,0.4);
+    border: none;
+}
 /*--------------------fim variavel para fonte do site-----------------*/
 
 /*-----------inicio configuração do menu hamburgue-------------*/
@@ -315,4 +325,223 @@ span{
 .conhecimento-img-wrapper img{
     object-fit: cover;/*imagem caber dentro do objeto grid*/
     width: 100%;
+}
+/*-----------FINAL configuração section CONHECIMENTOS-------------*/
+
+/*-----------inicio configuração section PROJETOS-------------*/
+
+.projetos{
+    display: flex;
+    justify-content: space-evenly;
+}
+.card{
+    width: 18rem;
+    height: 30rem;
+    position: relative;/*devido ao cardinfo usar absolute*/
+}
+.card-img-wrapper{
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    background-color: rgb(15, 15, 15);
+}
+.card-img-wrapper img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    opacity: 0.8;/*comeca em 0.8 com o hover vai baixar para 0.5*/
+    transition: opacity .3s;/*suavidade de 3 segundos no hover*/
+}
+.card:hover .card-img-wrapper img{
+    opacity: .4;
+}
+.card-info{
+    opacity: 0;/*começa em 0 e hover muda */
+    visibility: hidden;/*começa em 0 e hover muda */
+    position: absolute;
+    bottom: 0;
+    padding: 2.2rem;
+    text-shadow: 0 0.2rem 0.3rem rgba(0,0,0,0.6);
+    transition: all .3s;
+}
+.card-info h2{
+    font-family: var(--font-secundary);
+    font-size: 2rem;
+    font-weight: 500;
+    color: #eee;
+} 
+.card-info h3{
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ff4081;
+    margin-bottom: 1.5rem;
+} 
+.card-info p{
+    font-family: var(--font-primary);
+    font-size: .9rem;
+    color: rgb(255, 255, 255);
+    width: 80%;
+    margin-bottom: 2rem;
+} 
+.card-info button{
+    width: 8rem;
+    height: 2.5rem;
+    
+}
+.card:hover .card-info{
+    border: 2rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+/*-----------final configuração section PROJETOS-------------*/
+
+/*-----------inicio configuração section CONTATO-------------*/
+.sessao-contato{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #272727;
+    padding-top: 2rem 5rem;
+}
+.contato-wrapper{
+    width: 50%;
+    height: 35rem;
+    display: flex;
+    box-shadow: 0 2rem 3rem rgba(0,0,0,0.8);
+}
+.contato-left{
+    width: 9%;
+    background:url(img/ct5.jpg);
+    background-size: cover;
+    
+}
+.contato-right{
+    width: 80%;
+    background-color: #eee;
+    padding: 1rem 3rem 3rem 3rem;
+}
+.sessao-contato h1{
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-primary);
+    color: rgb(121, 119, 119);
+    font-size: 3rem;
+    font-weight: lighter;
+    border-bottom: solid 3px #6a3093;
+    margin-bottom: 1rem;
+
+}
+.sessao-contato form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input-group{
+    position: relative;
+}
+.field{
+    background: transparent;
+    border: none;
+    width: 20rem;
+    font-size: 1.5rem;
+    font-family: var(--font-secundary);
+    border-bottom: 1px dashed #636363;
+    height: 3rem;
+    outline: none;
+    margin: 1rem 0;
+
+}
+.input-group textarea{
+    padding-top: 0.5rem;/*espaçamento entre "name" e a linha*/
+    max-width: 20rem;
+    max-height: 3rem;
+}
+.field-label{
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    font-size: 1.2rem;
+    font-family: var(--font-secundary);
+    text-transform: uppercase;
+    transition: all 0.3s;/*suavizar a transicao do focus*/
+}
+.field:focus ~label{
+    top: 0;
+    font-size: 1rem;
+}
+.field:focus{
+    border-bottom: 1px solid;
+}
+.btn-submit{
+    width: 12%;
+    height: 1.8rem;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+/*-----------final configuração section CONTATO-------------*/
+
+/*-----------inicio configuração section ORÇAMENTO-------------*/
+.sessao-orcamento{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background: url(img/bgo4.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orcamento-wrapper{
+    width: 60%;
+    height: 60%;
+    background-color: #ffffff99;
+    border-radius: 10px;
+    box-shadow: 0 .2rem .3rem rgba(0,0,0,1);
+    position: relative;/*relativa pq é o pai, o filho vai ser absoluto*/
+}
+.sessao-orcamento h1{
+    position: absolute;
+    top: -2.5rem;
+    left: 2rem;
+    background: #B24592;  /*gradiente pego no site https://uigradients.com/*/
+    background: -webkit-linear-gradient(to right, #F15F79, #B24592);  
+    background: linear-gradient(to right, #F15F79, #B24592);
+    padding: 0 3rem;
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    font-weight: lighter;
+    box-shadow: 0 .2rem .3rem rgba(0,0,0,0.8);
+    border-radius: 10px;
+}
+.sessao-orcamento form{
+    margin: 8rem;
+    display: grid;
+    grid-template-columns: auto 1fr;/*primeira coluna fica dependendo do tamanho do texto, a segunda coluna é o restante do espaço*/
+    column-gap: 3rem;/*espaçamento entre as duas colunas*/
+    row-gap: 2rem;
+}
+.sessao-orcamento label{
+    font-family: var(--font-secundary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.sessao-orcamento input[type="number"]{
+    font-family: var(--font-secundary);
+    width: 4rem;
+    font-size: 2rem;
+    outline: none;
+    border-radius: 10px;
+    border: none;padding: .3rem;
+}
+.btn-orcamento{
+    text-transform: uppercase;
+    padding: 1rem;
+    cursor: pointer;
+    grid-column: 2;
 }
